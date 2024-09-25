@@ -14,11 +14,18 @@ app.get("/reading-list/books", (_, res) => {
   for (const key of keys) {
     allData[key] = cache.get(key);
   }
-  setTimeout(() => {
-    res.json({ message: 'This response was delayed by 3 seconds!' });
-}, 12000);
+//   setTimeout(() => {
+//     res.json({ message: 'This response was delayed by 3 seconds!' });
+// }, 12000);
 
-  return res.json(allData);
+const dataPromise = new Promise((resolve) => {
+  // Simulate a delay in fetching data (you can remove this if unnecessary)
+  setTimeout(() => {
+    resolve(allData);
+  }, 100000); // Simulate a delay of 1 second for data fetching
+});
+
+return Promise.resolve(dataPromise);
 });
 
 
