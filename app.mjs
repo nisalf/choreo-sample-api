@@ -16,7 +16,7 @@ app.get("/reading-list/books", (_, res) => {
   }
   setTimeout(() => {
     res.json({ message: 'This response was delayed by 3 seconds!' });
-}, delayInMilliseconds);
+}, 12000);
 
   return res.json(allData);
 });
