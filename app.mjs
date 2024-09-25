@@ -17,14 +17,14 @@ app.get("/reading-list/books", (_, res) => {
 //   setTimeout(() => {
 //     res.json({ message: 'This response was delayed by 3 seconds!' });
 // }, 12000);
-
+console.log("log 1")
 const dataPromise = new Promise((resolve) => {
   // Simulate a delay in fetching data (you can remove this if unnecessary)
   setTimeout(() => {
-    resolve(allData);
+    allData;
   }, 100000); // Simulate a delay of 1 second for data fetching
 });
-
+console.log("log 2")
 return Promise.resolve(dataPromise);
 });
 
