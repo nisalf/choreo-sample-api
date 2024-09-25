@@ -14,6 +14,10 @@ app.get("/reading-list/books", (_, res) => {
   for (const key of keys) {
     allData[key] = cache.get(key);
   }
+  setTimeout(() => {
+    res.json({ message: 'This response was delayed by 3 seconds!' });
+}, delayInMilliseconds);
+
   return res.json(allData);
 });
 
